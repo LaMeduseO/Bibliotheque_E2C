@@ -1,0 +1,94 @@
+/* Réglages Généraux */
+
+@font-face {
+    font-family: "police-paragraphe";
+    src: url(./paragraphe.otf);
+}
+
+@font-face {
+    font-family: "police-titre";
+    src: url(./titre.ttf);
+}
+
+        *{
+/* Suprimer toutes les marges par défauts pour ne pas être embété par celle-ci */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+/* Palette de couleur*/
+    --couleur-uranian-bleu: #b0d7ff;
+    --couleur-pomp-and-power: #7d6b91;
+    --couleur-rich-black: #131b23;
+    --couleur-moss-green: #918868;
+
+}
+
+    body { 
+        font-family: "police-paragraphe";
+        background-color: var(--couleur-rich-black);
+        color: var(--couleur-moss-green);
+    }
+
+
+
+/* Réglage Nav */
+#logo2 {
+    width: 500px;
+
+}
+
+
+
+
+/* Réglage Header */
+
+header {
+        font-family: "police-titre";
+        /*radialgradient et pour faire des dégradée de couleur j'ai mis circle at 50% pour faire un dégradée de manière circulaire*/
+        background: radial-gradient(circle at 50% ,var(--couleur-moss-green), var(--couleur-rich-black) );
+        color: var(--couleur-rich-black);
+        height: 15vh;
+        
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+  
+}
+
+h1{
+    font-size: 4rem;
+}
+
+h2{
+    font-size: 3rem;
+}
+
+h3{
+    font-size: 3rem;
+}
+
+article{
+    font-size: 2rem;
+}
+
+a{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+}
+
+
+/* Réglage Main */
+
+
+
+
+
+
+
+
+/* Réglage aside */
+
