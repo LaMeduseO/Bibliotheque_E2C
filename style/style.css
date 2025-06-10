@@ -12,10 +12,13 @@
 
         *{
 /* Suprimer toutes les marges par défauts pour ne pas être embété par celle-ci */
+
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 /* Palette de couleur*/
+
     --couleur-uranian-bleu: #b0d7ff;
     --couleur-pomp-and-power: #7d6b91;
     --couleur-rich-black: #131b23;
@@ -32,8 +35,10 @@
 
 
 /* Réglage Nav */
+
 #logo2 {
-    width: 500px;
+    width: 10%;
+    display: block;
 
 }
 
@@ -73,22 +78,123 @@ article{
     font-size: 2rem;
 }
 
-a{
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: end;
+#header {
+    width: 100vw;
+    background-color: chartreuse;
+    padding: 30px O;
+}
+#main {
+ width : 100vw;
+ height: 100vh;
+
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ align-items: stretch;
 }
 
+#left {
+    background-color: aqua;
+    width: 25%;
+}
+
+#right{
+    width: 70%;
+    background-color: rgb(216, 130, 18);
+} 
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid var(--couleur-moss-green) 4px;
+}
+
+#nav-bar{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    padding: 5px;
+}
+
+.nav-button{
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: block;
+
+    background-color: var(--couleur-moss-green);
+    color: var(--couleur-rich-black);
+    padding: 5px;
+
+    width: 10%;
+    margin: 5px;
+
+    text-align: center;
+    border-radius: 8px;
+     border: solid var(--couleur-rich-black) 2px;
+    
+}
+
+.nav-button:hover{
+    background-color: var(--couleur-rich-black);
+    color: var(--couleur-moss-green);
+    border: solid var(--couleur-moss-green) 2px;
+}
 
 /* Réglage Main */
 
+#rangement{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    padding: 30px;
+}
 
+main{
+    width: 75%;
+}
 
+article{ 
+    box-shadow: var(--couleur-moss-green)2px 2px 5px 0, var(--couleur-moss-green) inset 2px 2px 5px 0 ;
+    padding: 10px;
+    margin-bottom: 20px;
+}
 
-
-
+aside{
+    width: 20%;
+}
 
 
 /* Réglage aside */
 
+
+
+/* Image Et Vidéo */
+
+#video-e2c{
+    max-width: 100%;
+    width: 300px;
+
+}
+
+#lecture{
+    max-width: 100%;
+    width: 300px;
+
+}
+
+#prepa-num{
+    max-width: 100%;
+    width: 300px;
+
+}
+
+#festnum{
+    max-width: 100%;
+    width: 300px;
+
+}
