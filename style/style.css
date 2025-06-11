@@ -19,7 +19,7 @@
 
 /* Palette de couleur*/
 
-    --couleur-uranian-bleu: #b0d7ff;
+    --couleur-midnight:  #46351D;
     --couleur-pomp-and-power: #7d6b91;
     --couleur-rich-black: #131b23;
     --couleur-moss-green: #918868;
@@ -37,7 +37,7 @@
 /* Réglage Nav */
 
 #logo2 {
-    width: 10%;
+    width: 5%;
     display: block;
 
 }
@@ -48,6 +48,9 @@
 /* Réglage Header */
 
 header {
+    position: relative;
+    top: 15vmin;
+
         font-family: "police-titre";
         /*radialgradient et pour faire des dégradée de couleur j'ai mis circle at 50% pour faire un dégradée de manière circulaire*/
         background: radial-gradient(circle at 50% ,var(--couleur-moss-green), var(--couleur-rich-black) );
@@ -68,10 +71,22 @@ h1{
 
 h2{
     font-size: 3rem;
+    margin-bottom: 5px;
 }
 
 h3{
     font-size: 3rem;
+}
+
+h4{
+font-size: 6rem;
+font-family: "titre";
+color: var(--couleur-moss-green);
+margin-right: 30px;
+}
+
+p{
+    margin-bottom: 5px;
 }
 
 article{
@@ -82,6 +97,7 @@ article{
     width: 100vw;
     background-color: chartreuse;
     padding: 30px O;
+    
 }
 #main {
  width : 100vw;
@@ -103,6 +119,12 @@ article{
     background-color: rgb(216, 130, 18);
 } 
 nav{
+    position: fixed;
+    background-color: var(--couleur-rich-black);
+    width: 100vw;
+    z-index: 10;
+
+    height: 15vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -134,6 +156,7 @@ nav{
     text-align: center;
     border-radius: 8px;
      border: solid var(--couleur-rich-black) 2px;
+     transition: background-color 500ms, color 1000ms, border 1000ms;
     
 }
 
@@ -143,9 +166,12 @@ nav{
     border: solid var(--couleur-moss-green) 2px;
 }
 
-/* Réglage Main */
+/* Réglage Main eet Aside*/
 
 #rangement{
+        position: relative;
+        top: 15vmin;
+
     width: 100vw;
     display: flex;
     flex-direction: row;
@@ -155,35 +181,66 @@ nav{
 }
 
 main{
-    width: 75%;
+    width: 65%;
 }
 
 article{ 
     box-shadow: var(--couleur-moss-green)2px 2px 5px 0, var(--couleur-moss-green) inset 2px 2px 5px 0 ;
     padding: 10px;
     margin-bottom: 20px;
+    transition: transform 1000ms;
+}
+
+article:hover{
+    transform: scale(0.9);
 }
 
 aside{
-    width: 20%;
+    position: fixed;
+    top: 25vmin;
+    right: 20px;
+    
+
+    width: 32%;
+    z-index: 11;
+    height: 90vh;
+    overflow: scroll;
+
 }
 
 
-/* Réglage aside */
+/*Réglage Arcticle 1*/
+#text1-contenant{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: stretch;
+
+}
+#text1{
+    width: 60%;
+    padding: 10px;
+}
 
 
 
 /* Image Et Vidéo */
 
 #video-e2c{
+    display: block;
     max-width: 100%;
-    width: 300px;
+    width: 50%;
+    aspect-ratio: 16/9;
+    border-radius: 20px;
 
 }
 
 #lecture{
     max-width: 100%;
-    width: 300px;
+    width: 40%;
+    float: right;
+    box-shadow: var(--couleur-rich-black)2px 2px 5px 0;
+    
 
 }
 
@@ -195,6 +252,47 @@ aside{
 
 #festnum{
     max-width: 100%;
-    width: 300px;
+    width: 500vw;
 
+}
+
+aside>article{
+    padding: 15px;
+    background-color: var(--couleur-midnight);
+    color: var(--couleur-moss-green);
+    border: solid rgb(85, 83, 83) 3px;
+    border-radius: 10px;
+}
+
+/* Design De Malade*/
+
+.intertext{
+    width: 100%;
+    aspect-ratio: 1904/640;
+    background-image: url(../src/bib2.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position-y: 15vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+   
+}
+
+.it2{
+    width: 100%;
+    aspect-ratio: 1904/640;
+    background-image: url(../src/bib1.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position-y: 15vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
 }
