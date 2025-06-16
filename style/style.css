@@ -19,17 +19,24 @@
 
 /* Palette de couleur*/
 
-    --couleur-midnight:  #46351D;
-    --couleur-pomp-and-power: #7d6b91;
-    --couleur-rich-black: #131b23;
-    --couleur-moss-green: #918868;
+            /*arrière-plan, en-tête, pied de page*/
+            --couleur-bleu-nuit:  #2C3E50;
+
+            /*fond principal, zones de lecture*/
+            --couleur-ivoine-clair: #F8F5F2;
+
+            /*boutons, liens, accents*/
+            --couleur-ocre-dore: #D4A373;
+
+            /*survols, badges, éléments secondaires*/
+            --couleur-vert-sauge: #A3B18A;
 
 }
 
     body { 
         font-family: "police-paragraphe";
-        background-color: var(--couleur-rich-black);
-        color: var(--couleur-moss-green);
+        background-color: var(--couleur-bleu-nuit);
+        color: var(--couleur-ivoine-clair);
     }
 
 
@@ -53,8 +60,8 @@ header {
 
         font-family: "police-titre";
         /*radialgradient et pour faire des dégradée de couleur j'ai mis circle at 50% pour faire un dégradée de manière circulaire*/
-        background: radial-gradient(circle at 50% ,var(--couleur-moss-green), var(--couleur-rich-black) );
-        color: var(--couleur-rich-black);
+        background: radial-gradient(circle at 50% ,var(--couleur-ivoine-clair), var(--couleur-bleu-nuit) );
+        color: var(--couleur-bleu-nuit);
         height: 15vh;
         
 
@@ -81,7 +88,7 @@ h3{
 h4{
 font-size: 6rem;
 font-family: "titre";
-color: var(--couleur-moss-green);
+color: var(--couleur-ivoine-clair);
 margin-right: 30px;
 }
 
@@ -120,7 +127,7 @@ article{
 } 
 nav{
     position: fixed;
-    background-color: var(--couleur-rich-black);
+    background-color: var(--couleur-bleu-nuit);
     width: 100vw;
     z-index: 10;
 
@@ -129,7 +136,7 @@ nav{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-bottom: solid var(--couleur-moss-green) 4px;
+    border-bottom: solid var(--couleur-ivoine-clair) 4px;
 }
 
 #nav-bar{
@@ -146,24 +153,25 @@ nav{
     text-decoration: none;
     display: block;
 
-    background-color: var(--couleur-moss-green);
-    color: var(--couleur-rich-black);
+    background-color: var(--couleur-ivoine-clair);
+    color: var(--couleur-bleu-nuit);
     padding: 5px;
 
-    width: 10%;
+    width: 15%;
     margin: 5px;
+    
 
     text-align: center;
     border-radius: 8px;
-     border: solid var(--couleur-rich-black) 2px;
+     border: solid var(--couleur-bleu-nuit) 2px;
      transition: background-color 500ms, color 1000ms, border 1000ms;
     
 }
 
 .nav-button:hover{
-    background-color: var(--couleur-rich-black);
-    color: var(--couleur-moss-green);
-    border: solid var(--couleur-moss-green) 2px;
+    background-color: var(--couleur-bleu-nuit);
+    color: var(--couleur-ivoine-clair);
+    border: solid var(--couleur-ivoine-clair) 2px;
 }
 
 /* Réglage Main eet Aside*/
@@ -185,7 +193,7 @@ main{
 }
 
 article{ 
-    box-shadow: var(--couleur-moss-green)2px 2px 5px 0, var(--couleur-moss-green) inset 2px 2px 5px 0 ;
+    box-shadow: var(--couleur-ivoine-clair)2px 2px 5px 0, var(--couleur-ivoine-clair) inset 2px 2px 5px 0 ;
     padding: 10px;
     margin-bottom: 20px;
     transition: transform 1000ms;
@@ -239,7 +247,7 @@ aside{
     max-width: 100%;
     width: 40%;
     float: right;
-    box-shadow: var(--couleur-rich-black)2px 2px 5px 0;
+    box-shadow: var(--couleur-bleu-nuit)2px 2px 5px 0;
     
 
 }
@@ -258,8 +266,8 @@ aside{
 
 aside>article{
     padding: 15px;
-    background-color: var(--couleur-midnight);
-    color: var(--couleur-moss-green);
+    background-color: var(--couleur-ocre-dore);
+    color: var(--couleur-ivoine-clair);
     border: solid rgb(85, 83, 83) 3px;
     border-radius: 10px;
 }
