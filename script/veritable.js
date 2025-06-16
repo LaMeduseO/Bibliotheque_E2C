@@ -1,4 +1,6 @@
-let targetNumber = 27
+let targetNumber = Math.floor(Math.random()*100)+1;
+
+console.log (targetNumber);
 
 let userNumber = prompt('Devinez un nombre entre 1 et 100 :');
 
