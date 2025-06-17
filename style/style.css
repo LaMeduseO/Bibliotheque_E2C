@@ -304,3 +304,68 @@ aside>article{
     justify-content: end;
     align-items: center;
 }
+
+#main-game {
+    position: relative;
+    top: 15vmin;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: row;
+    align-items: center;
+
+    width: 100%;
+    padding: 25px;
+
+    font-size: 1.5rem;
+}
+
+
+#user-interface{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#user-number{
+    font-size: 1.5rem;
+    width: 13vw;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: var(--couleur-vert-sauge);
+}
+
+#user-number:focus{
+    background-color: var(--couleur-bleu-nuit);
+    color: var(--couleur-ivoine-clair);
+}
+
+
+#send-button{
+    display: block;
+    font-size: 1.5rem;
+    padding: 5px;
+    margin-left: 20px;
+
+    background-color: var(--couleur-vert-sauge);
+    border-radius: 10px;
+
+    box-shadow: var(--couleur-ivoine-clair) 3px 3px 5px 0;
+    transition: box-shadow 250ms, background-color 250ms;
+
+}
+
+#send-button:hover{
+    background-color: var(--couleur-bleu-nuit);
+    /*box-shadow: 0 0 0 0;*/
+}
+
+.result-line{
+    font-family: "police-titre";
+    border: var(--couleur-vert-sauge)solid 2px;
+    border-radius: 5px;
+    font-size: 1.8rem;
+    margin: 10px;
+}
