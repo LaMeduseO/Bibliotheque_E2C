@@ -60,3 +60,85 @@ SELECT pseudo, mail, mdp FROM user WHERE pseudo LIKE "%a%";
 
 /* Organiser par ordre alphabetique (ASC , DESC) */
 SELECT pseudo, mail, avatar FROM user ORDER BY mail ASC;
+
+
+/* Supprimer Des données */
+DELETE FROM user WHERE pseudo = "motsdepasse";
+
+/* modification de table */
+ALTER TABLE user
+DROP COLUMN avatar; /* DROP -> supprimer une colonne mais peut être autre chose */
+
+ALTER TABLE user
+ADD COLUMN is_admin BOOLEAN NOT NULL DEFAULT 0; /* ADD -> ajouter une colonne ou autre, il faut définir les élément
+de la colonne, comme quand on créé une table */
+
+ALTER TABLE user MODIFY id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY; /* Change les propriété d'une colonne */
+
+ALTER TABLE user CHANGE pseudo user_name VARCHAR(120) NOT NULL UNIQUE; /* Change le nom et les propriété d'une colonne */
+
+/* Modifier les données */
+UPDATE user
+SET is_admin = 1
+WHERE id = 2;
+
+CREATE TABLE IF NOT EXISTS site (
+    id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    ville VARCHAR(50) NOT NULL UNIQUE
+)ENGINE=InnoDB;
+
+INSERT INTO site (ville)
+    VALUES ("Roubaix"),("Lille"),("Armentières"),("St Omer");
+
+/* Créer une relation */
+ALTER TABLE user
+ADD COLUMN site_id TINYINT UNSIGNED NOT NULL DEFAULT 1;
+
+ALTER TABLE user
+ADD CONSTRAINT fk_user_site
+FOREIGN KEY (site_id)
+REFERENCES site(id);
+
+UPDATE user 
+SET site_id = 2
+WHERE id = 3;
+
+/* Jointure */
+
+CREATE VIEW user_vw AS (SELECT user.pseudo AS utilisateur, user.mail, site.ville 
+FROM user INNER JOIN site 
+ON user.site_id = site.id
+);
+
+SELECT user.pseudo AS utilisateur, user.mail, site.ville FROM user INNER JOIN site ON user.site_id = site.id;
+
+/* On s'attaque aux livres */
+
+CREATE TABLE IF NOT EXISTS genre (
+    id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL UNIQUE
+)ENGINE=InnoDB;
+
+INSERT INTO genre (name)
+VALUES ("Roman"),("Fantasy"),("Manga"),("Science Fiction"),("Horreur"),("Romance"),("Policier"),("Magazine"),("BD"),("Histoire"),("Biographie"),("Politique"),("Scolaire");
+
+CREATE TABLE IF NOT EXISTS livres(
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    titre VARCHAR(255) NOT NULL DEFAULT "Inconnu",
+    auteur VARCHAR(100) NOT NULL DEFAULT "Inconnu",
+    synopsis TEXT,
+    page SMALLINT NOT NULL,
+    year SMALLINT NOT NULL DEFAULT "0",
+    genre_id TINYINT UNSIGNED NOT NULL DEFAULT 1,
+    site_id TINYINT UNSIGNED NOT NULL DEFAULT 1,
+    user_id SMALLINT UNSIGNED,
+    CONSTRAINT fk_livres_genre
+        FOREIGN KEY (genre_id)
+        REFERENCES genre(id),
+    CONSTRAINT fk_livres_site
+        FOREIGN KEY (site_id)
+        REFERENCES site(id),
+    CONSTRAINT fk_livres_user
+        FOREIGN KEY (user_id)
+        REFERENCES user(id)
+)ENGINE=InnoDB;
