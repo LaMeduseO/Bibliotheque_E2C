@@ -126,7 +126,7 @@ CREATE TABLE IF NOT EXISTS livres(
     id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     titre VARCHAR(255) NOT NULL DEFAULT "Inconnu",
     auteur VARCHAR(100) NOT NULL DEFAULT "Inconnu",
-    synopsis TEXT,
+    synopsis TEXT,  
     page SMALLINT NOT NULL,
     year SMALLINT NOT NULL DEFAULT "0",
     genre_id TINYINT UNSIGNED NOT NULL DEFAULT 1,
@@ -142,3 +142,87 @@ CREATE TABLE IF NOT EXISTS livres(
         FOREIGN KEY (user_id)
         REFERENCES user(id)
 )ENGINE=InnoDB;
+
+CREATE VIEW livres_vw AS (
+    SELECT livres.id, livres.titre, livres.auteur, genre.name AS genre, site.ville AS site, livres.year AS "année", livres.page
+    FROM livres
+    INNER JOIN genre ON livres.genre_id = genre.id
+    INNER JOIN site ON livres.site_id = site.id
+    
+);
+
+SELECT titre, auteur, genre FROM livres_vw WHERE site = "Roubaix" ;
+
+SELECT genre, Count(id) AS "nombre" FROM livres_vw GROUP BY genre; 
+
+SELECT site, Count(id) AS "ville" FROM livres_vw GROUP BY site;
+
+SELECT genre, site, Count(id) AS "nombre" FROM livres_vw GROUP BY genre, site ORDER BY genre ASC , site ASC;
+
+SELECT genre, site, Count(id) AS "nombre" FROM livres_vw WHERE genre = "Policier" OR genre = "Roman" GROUP BY genre, site ORDER BY site ASC;
+
+SELECT MAX (page), genre FROM livres_vw GROUP BY genre; 
+
+ID UTILISATEUR 2,4 3 = Vide
+
+ID Livres 72, 90, 104, 130
+
+
+UPDATE Livres
+SET user_id = 2
+WHERE id = 72 or id = 120;
+
+UPDATE Livres
+SET user_id = 2
+WHERE id = 90;
+
+UPDATE Livres
+SET user_id = 4
+WHERE id = 104;
+
+UPDATE Livres
+SET user_id = 4
+WHERE id = 130;
+
+SELECT user.pseudo, user.mail, livres.titre
+FROM user
+INNER JOIN livres ON livres.user_id = user.id;
+
+SELECT user.pseudo, user.mail, livres.titre
+FROM user
+LEFT JOIN livres ON livres.user_id = user.id;
+
+SELECT user.pseudo, user.mail, livres.titre
+FROM user
+RIGHT JOIN livres ON livres.user_id = user.id;
+
+/* Commentaires */
+
+CREATE TABLE IF NOT EXISTS comment (
+    comment_content TEXT NOT NULL,
+    user_id SMALLINT UNSIGNED NOT NULL,
+    livres_id INT UNSIGNED  NOT NULL,
+
+    PRIMARY KEY (user_id, livres_id),
+
+    CONSTRAINT fk_comment_user
+        FOREIGN KEY (user_id)
+        REFERENCES user(id),
+
+    CONSTRAINT fk_comment_livres
+        FOREIGN KEY (livres_id)
+        REFERENCES livres(id)
+
+)ENGINE = InnoDB;
+
+INSERT INTO comment (user_id, livres_id, comment_content)
+VALUES (2, 90, "Vla la dinguerie la fin"),
+       (3, 111, "Mouais la fin pas incroyable"),
+       (3, 72, "Avec Oreo Je Collabore, Déli'Choc Pas D'accord");
+
+CREATE VIEW comment_vw AS (
+    SELECT comment.livres_id, livres.titre, user.pseudo AS Utilisateur, comment.comment_content AS Commentaires
+    FROM livres
+    INNER JOIN comment ON comment.livres_id = livres.id
+    INNER JOIN user ON comment.user_id = user.id
+);
