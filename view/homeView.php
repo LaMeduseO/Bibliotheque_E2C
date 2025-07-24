@@ -6,10 +6,10 @@
 
             <title>Bibliothèque E2C</title>
 
-                <link rel="stylesheet" href="./style/style.css">
-                <link rel="icon" href="./src/logo.png">
+                <link rel="stylesheet" href="../style/style.css">
+                <link rel="icon" href="../src/logo.png">
 
-                <script src="./script/news.js" defer></script>
+                <script src="../script/news.js" defer></script>
 
 
 
@@ -18,23 +18,12 @@
 
 <!--Zone du menu , en haut de la page-->
 
-        <nav>
-                <img id="logo2" src="./src/logo2.png" alt="Logo E2C">
-
-              <div id="nav-bar">
-                <a class="nav-button" href="./index.htm">Accueil</a>
-                <a class="nav-button" href="./pages/librayry.htm">Bibliothèque</a>
-                <a class="nav-button" href="./pages/game.htm">Détente</a>
-              </div>
-        </nav>
-
 <!--En tête stylé-->
 
-    <header>
-        <h1>Bibliothèque De L'E2C</h1>
-        
-        <h3>Giga Beau Gosse</h3>
-    </header>
+    <?php
+        require_once("../view/_partials/_nav.php");
+        require_once("../view/_partials/_header.php");
+    ?>
 
 <!--Zone principale - présentation de l'e2c et de Silence, On lit-->
 
@@ -70,7 +59,7 @@
             <h2>Lire pour apprendre, lire pour s’insérer</h2>
 
            
-        <p> <img id="lecture" src="./src/sol.png" alt="Des stagiaires en pleine lecture"> À l’E2C Grand Lille, la lecture est intégrée dans un parcours pédagogique sur mesure. Elle permet aux jeunes de renforcer leurs compétences en compréhension écrite, d’enrichir leur vocabulaire et de développer leur esprit critique. Qu’il s’agisse de lire un article de presse, un roman, ou un texte professionnel, chaque lecture est une opportunité de progresser et de mieux se préparer à la vie active. Des ateliers de lecture, des rencontres avec des auteurs ou encore des projets autour du livre viennent enrichir cette démarche.</p>
+        <p> <img id="lecture" src="../src/sol.png" alt="Des stagiaires en pleine lecture"> À l’E2C Grand Lille, la lecture est intégrée dans un parcours pédagogique sur mesure. Elle permet aux jeunes de renforcer leurs compétences en compréhension écrite, d’enrichir leur vocabulaire et de développer leur esprit critique. Qu’il s’agisse de lire un article de presse, un roman, ou un texte professionnel, chaque lecture est une opportunité de progresser et de mieux se préparer à la vie active. Des ateliers de lecture, des rencontres avec des auteurs ou encore des projets autour du livre viennent enrichir cette démarche.</p>
 
         <p>Cette approche pédagogique favorise également l’expression orale et écrite, essentielle pour réussir dans le monde professionnel. Les jeunes apprennent à argumenter, à structurer leurs idées et à prendre la parole avec assurance. En travaillant sur des supports variés, ils développent leur autonomie et leur capacité à s’adapter à différents contextes de communication. La lecture devient ainsi un outil transversal, au service de l’insertion sociale et professionnelle.</p>
 
@@ -88,7 +77,7 @@
         <P>Ce parcours allie apprentissage technique et créativité. Les jeunes y développent des projets numériques concrets, en lien avec leurs centres d’intérêt et les besoins du monde professionnel. Ils apprennent à travailler en équipe, à gérer un projet de A à Z, et à valoriser leurs compétences à travers des réalisations visibles et utiles. La Prépa Numérique est ainsi un tremplin vers les métiers du futur, où la lecture, sous toutes ses formes, reste un pilier fondamental de la réussite.</P>
 
         
-            <img id="prepa-num" src="./src/bannerOld.jpg" alt="Photo des personne ayant participé a la prépa numérique">
+            <img id="prepa-num" src="../src/bannerOld.jpg" alt="Photo des personne ayant participé a la prépa numérique">
 
     </article>
 
@@ -102,7 +91,7 @@
             <article>
                 <h2>🎉 Le Fest Num revient à Roubaix le 24 juin !</h2>
 
-                <img id="festnum" src="./src/festNum.jpg" alt="Image Du Festival Numérique">
+                <img id="festnum" src="../src/festNum.jpg" alt="Image Du Festival Numérique">
 
             <p>La Prépa Numérique de l’E2C Grand Lille vous donne rendez-vous le 24 juin 2025 sur le site de Roubaix pour une nouvelle édition du Fest Num, un événement festif et créatif dédié au numérique. Porté par les jeunes en formation, ce festival mettra en lumière leurs projets web, leurs créations graphiques, leurs prototypes interactifs… et bien plus encore ! Une belle occasion de découvrir les talents de demain, d’échanger autour des métiers du digital et de célébrer l’innovation dans une ambiance conviviale et inspirante.</p>
 

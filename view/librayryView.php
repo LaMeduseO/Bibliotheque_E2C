@@ -14,24 +14,12 @@
 
 <!--Zone du menu , en haut de la page-->
 
-        <nav>
-                <img id="logo2" src="../src/logo2.png" alt="Logo E2C">
-
-              <div id="nav-bar">
-                <a class="nav-button" href="../index.htm">Accueil</a>
-                <a class="nav-button" href="../pages/librayry.htm">Bibliothèque</a>
-                <a class="nav-button" href="../pages/game.htm">Détente</a>
-              </div>
-        </nav>
 
 <!--En tête stylé-->
-
-    <header>
-        <h1>Des Livres et des Histoire</h1>
-        
-        <h3>La Bibliothèque de L'E2C</h3>
-    </header>
-
+    <?php
+        require_once("../view/_partials/_nav.php");
+        require_once("../view/_partials/_header.php");
+    ?>
 <!--Zone principale-->
 
 

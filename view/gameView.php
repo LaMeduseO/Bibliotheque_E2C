@@ -14,25 +14,17 @@
 
 <!--Zone du menu , en haut de la page-->
 
-        <nav>
-                <img id="logo2" src="../src/logo2.png" alt="Logo E2C">
 
-              <div id="nav-bar">
-                <a class="nav-button" href="../index.htm">Accueil</a>
-                <a class="nav-button" href="../pages/librayry.htm">Bibliothèque</a>
-                <a class="nav-button" href="../pages/game.htm">Détente</a>
-              </div>
-        </nav>
 
-<!--En tête stylé-->
+    <?php
+        require_once("../view/_partials/_nav.php");
+        require_once("../view/_partials/_header.php");
+    ?>
+<!--En tête stylé
 
-    <header>
-        <h1>Zone Chill</h1>
-        
-        <h3>8 mort 6 Blesser</h3>
-    </header>
 
-<!--Zone principale-->
+Zone principale-->
+
         <div id="main-game">
 
                 <div id="user-interface">
