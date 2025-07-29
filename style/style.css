@@ -419,69 +419,90 @@ aside>article{
 
 /* Formulaire de connexion */ 
 
+
 #connect-box {
-    z-index: 20;
-    position: fixed;
-    width: 40vw;
-    height: 30vh;
-    top: 35vh;
-    left: 30vw;
+    z-index : 20;
+    position : fixed;
+    width : 35vw;
+    height : 20vh;
+    top : 40vh;
+    left : 30vw;
 
     background-color: var(--couleur-bleu-nuit);
-    color: var(--couleur-ivoine-clair);
+    color: (var(--couleur-ivoine-clair));
     border: var(--couleur-ivoine-clair) 1px solid;
     border-radius: 10px;
 
+    box-shadow: black 2px 2px 4px 0;
+
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: start;
 
     padding: 1vh 2vw;
 }
-#connect-box> form {
-     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
 
-    width: 100%;
-    height: 28vh ;
-}
+
 
 .connect-line {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: end;
     width: 100%;
 }
+
 .connect-line>label {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 800;
     
 }
 
-.connect-line>input {
-    background-color: var(--couleur-ivoine-clair);
-    height: 4vh;
+.connect-line>input {    
+    
     border-radius: 3px;
-    width: 50%;
+    width : 70%;
+    font-size: 1.4rem;
+    padding: 5px;
 }
+
 
 .form-button {
     font-size: 1.5rem;
     text-decoration: none;
     display: block;
+    max-width : 30%;
+    background-color: var(--couleur-bleu-nuit);
+    color: var(--couleur-ivoine-clair);
+    padding: 10px 25px;
 
-    background-color: var(--couleur-ivoine-clair);
-    color: var(--couleur-bleu-nuit);
-    padding: 5px;
-
-    margin: 5px;
     
+    margin : 5px;
 
     text-align: center;
-    border-radius: 8px;
-     border: solid var(--couleur-bleu-nuit) 2px;
-     transition: background-color 500ms, color 1000ms, border 1000ms;
+    border-radius: 5px;
+    border: solid var(--couleur-ivoine-clair) 2px;
+    transition: background-color 300ms, color 500ms, border 500ms;
+}
+
+#connect-close {
+    position: absolute;
+    right: 0vh;
+    top : -4.5vh;
+    height: 3.5vh;
+    aspect-ratio: 1;
+
+    background-color: var(--couleur-bleu-nuit);
+    color: (var(--couleur-ivoine-clair));
+    border: var(--couleur-ivoine-clair) 1px solid;
+    border-radius: 10%;
+
+    box-shadow: black 2px 2px 4px 0;
+
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 900;
+
+    user-select: none;
 }
