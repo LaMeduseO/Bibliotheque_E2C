@@ -174,7 +174,44 @@ nav{
     border: solid var(--couleur-ivoine-clair) 2px;
 }
 
-/* Réglage Main eet Aside*/
+/* Flash Message et footer*/
+
+#flash-message {
+    position: fixed;
+    top: 3vh;
+    right: 43vw;
+    width: 50vw;
+
+    font-size: 1.6rem;
+
+    background-color: var(--couleur-ocre-dore);
+    color: var(--couleur-ivoine-clair);
+    border-radius: 15px;
+    padding: 10px;
+
+    box-shadow: black 2px 2px 4px 0;
+    user-select: none;
+
+    transition: right 1200ms;
+    z-index: 20;
+}
+
+footer {
+    position: fixed;
+    bottom: 0vh;
+    z-index: 20;
+
+    font-size: 1.2rem;
+
+    width: 100vw;
+    padding: 5px;
+    background-color: #A3B18A;
+    color: var(--couleur-ivoine-clair);
+    border-top: var(--couleur-ivoine-clair) 1px solid;
+}
+
+
+/* Réglage Main est Aside*/
 
 #rangement{
         position: relative;
@@ -435,7 +472,7 @@ aside>article{
 
     box-shadow: black 2px 2px 4px 0;
 
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: start;

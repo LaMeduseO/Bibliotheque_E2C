@@ -10,7 +10,8 @@
                 <link rel="icon" href="../src/logo.png">
 
                 <script src="../script/news.js" defer></script>
-
+                <script src="../script/connect.js" defer></script>
+                <script src="../script/flash.js" defer></script>
 
 
         </head>
@@ -23,6 +24,13 @@
     <?php
         require_once("../view/_partials/_nav.php");
         require_once("../view/_partials/_header.php");
+        require_once("../view/_partials/_connect.php");
+        if(isset($_GET["message"])) {
+            require_once("../view/_partials/_flashMessage.php");
+        }
+        if(isset($_SESSION["userId"])){
+            require_once("../view/_partials/_footer.php");
+        }
     ?>
 
 <!--Zone principale - présentation de l'e2c et de Silence, On lit-->
@@ -107,20 +115,6 @@
 
             </div>
 
-    <form id="connect-box" action="../controller/loginController.php" method="post">
-        <div id="connect-close">x</div>
-        <div class="connect-line">
-            <label for="email">Email</label>
-            <input type="mail" id="email" name="email" placeholder="Email" required>
-        </div>
-        <div class="connect-line">
-            <label for="password">Mot de passe</label>
-            <input type="password" id="password" name="password" placeholder="Mot De Passe" required>
-        </div>
-        <div class="connect-line">
-            <div></div>
-            <input type="submit" value="Envoyer" class="form-button">
-        </div>
-    </form>
+
 </body>
 </html>

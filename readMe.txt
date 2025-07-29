@@ -1,0 +1,1 @@
+Rajouter la fenêtre de connexion a toute les pages + footer 
