@@ -1,4 +1,5 @@
 <?php
+ session_start();
     $pageTitle = "Zone Chill";
     $pageSubtitle = "8 mort 6 Blesser";
     $navList = [
